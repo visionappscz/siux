@@ -1,0 +1,15 @@
+{
+  "name": "siux",
+  "version": "0.0.0",
+  "description": "SIUX is a tool for creating responsive HTML prototypes with Bootstrap + Synergic UI, Silex, and Twig.",
+  "homepage": "http://siux.synergic.cz",
+  "authors": [
+    "http://www.adamkudrna.cz",
+    "http://www.synergic.cz"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "synergic-ui": "#master",
+    "picturefill": "~2.3.0"
+  }
+}
