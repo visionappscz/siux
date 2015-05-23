@@ -1,0 +1,16 @@
+{% extends '_layouts/base.html.twig' %}
+
+{% block header %}
+    <section class="section section-header">
+        <div class="container">
+            <h1>
+                {% include '_partials/icon.html.twig' with {'name': 'home', 'class': 'icon-offset icon-vertically-aligned text-muted'} %}
+                Dashboard
+            </h1>
+        </div>
+    </section>
+{% endblock %}
+
+{% block body %}
+    <p>Here goes the content.</p>
+{% endblock %}

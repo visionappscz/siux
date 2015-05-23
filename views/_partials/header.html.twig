@@ -1,0 +1,79 @@
+<header role="banner" id="top">
+
+    <!-- Main navigation -->
+    <nav class="navbar navbar-static-top navbar-default">
+        <div class="container">
+
+            <!-- Brand and menu toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenu">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="./" class="navbar-brand">SIUX</a>
+            </div>
+
+            <!-- Collapsible menu -->
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="">
+                            {% include '_partials/icon.html.twig' with {'name': 'home', 'class': 'hidden-xs'} %}
+                            <span class="visible-xs">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">Orders</a>
+                    </li>
+                    <li>
+                        <a href="">Products</a>
+                    </li>
+                    <li>
+                        <a href="">Users</a>
+                    </li>
+                    <li>
+                        <a href="">Media</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-icon">
+                        <a href="#" target="_blank" title="Open in new tab">
+                            {% include '_partials/icon.html.twig' with {'name': 'home'} %}
+                            <span class="visible-xs">Home</span>
+                        </a>
+                    </li>
+                    <li class="navbar-icon">
+                        <a href="" title="Nastavení">
+                            {% include '_partials/icon.html.twig' with {'name': 'cog'} %}
+                            <span class="visible-xs">Settings</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="My account">
+                            {% include '_partials/icon.html.twig' with {'name': 'user', 'class': 'icon-offset'} %}
+                            <span class="visible-xs">My account</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">James Brown</li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    {% include '_partials/icon.html.twig' with {'name': 'off', 'class': 'icon-offset icon-vertically-aligned'} %}
+                                    Sign out
+                                </a>
+                            </li>
+                        </ul>
+                    </li><!-- .dropdown -->
+                </ul><!-- .nav -->
+
+            </div><!-- .collapsible -->
+
+        </div><!-- .container -->
+    </nav>
+
+</header>

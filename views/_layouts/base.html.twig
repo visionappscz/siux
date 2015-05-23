@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//themes.googleusercontent.com" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% filter striptags|trim %}{% block title %}SIUX Prototype{% endblock %}{% endfilter %}</title>
+
+    {% block styles %}
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700&amp;subset=latin,latin-ext" />
+        <link rel="stylesheet" href="css/main.min.css" />
+    {% endblock %}
+
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAdtJREFUeNpiYICAAiB+D8T/6YTfQ+2EW/5/gHABI9Q1AgwDAz4wQl0yYICJYYABC6kahCRYGPRsuBhUDdgZOHlQ3X/nwk+Gty/+MNy+8IPhHZAmBhAdBSDLvBL4GRxC+IgyONfhIXVDIG+COIOMChtRaon1PdEO8EoQwLAcZMmlI98Yvn/5D40aZmC0cICjCBQFVHWAuQc3Cn/tlPcMB9Z8wplGhCVYqOsAISQDQT7HZTlMnpQoIDkboqd8upQD37/8Q3FATIUw1RzADMQNhBSJy7GiJEIQG5Tg3r34S1Jwk10OgHzduEIaa/CDHHByx1eGEzu+kOUYogsiUEIEBT3I57jASaAjti34SJJDSK6MzD14wNkSn0OWdLwFO4YmDkBOBw4hvGAHYQOza16DCyqaOYBQHQGKhvqIp7SvjkFZFFQygoIdPc0QU2ZQrVQBxfmTO78womnQN0iIckBwjiA4joXwVDIgeXQfE1MrElUZwRIYyCGgxPUWLZ+DLEaPb2KzIQsx2Q09cQkRqG5BaQGUMKkWBaSUbCCfTyp4iVKBUaUcAIWECrD04wIGtQqwQYqcDZ/e+Q2OFkgL6R9JiXC0XwBywIcBtP8DqEHyE4g9BsgBlQwD3T0HCDAAK8cEDKJ16mUAAAAASUVORK5CYII=" />
+</head>
+<body class="has-footer-sticky">
+
+{% include '_partials/flash_messages.html.twig' %}
+
+{% include '_partials/header.html.twig' %}
+
+<main>
+    {% block header %}
+        <section class="section section-header">
+            <div class="container">
+                <h1>
+                    {% include '_partials/icon.html.twig' with {'name': 'dashboard', 'class': 'icon-offset icon-vertically-aligned text-muted'} %}
+                    Admin
+                </h1>
+            </div>
+        </section>
+    {% endblock %}
+
+    <div class="section section-content">
+        <div class="container">
+
+            {% block body %}{% endblock %}
+
+        </div>
+    </div>
+</main>
+
+{% include '_partials/footer.html.twig' %}
+
+{% block scripts %}
+    <script src="js/main.min.js"></script>
+{% endblock %}
+
+</body>
+</html>
