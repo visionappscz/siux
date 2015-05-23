@@ -1,15 +1,11 @@
 <?php
 
-use Silex\Application,
-    Silex\Provider\TwigServiceProvider,
-    Silex\Provider\SessionServiceProvider;
-
-
-$app = new Application;
+$app = new Silex\Application;
 
 // Register providers
-$app->register(new SessionServiceProvider);
-$app->register(new TwigServiceProvider, ['twig.path' => __DIR__ . '/../views']);
+$app->register(new Silex\Provider\SessionServiceProvider);
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider);
+$app->register(new Silex\Provider\TwigServiceProvider, ['twig.path' => __DIR__ . '/../views']);
 
 // Page rendering
 $app->get('/', function () use ($app) {

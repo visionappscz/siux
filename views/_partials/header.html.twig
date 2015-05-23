@@ -12,15 +12,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="./" class="navbar-brand">SIUX</a>
+                <a href="{{ app.request.basepath }}" class="navbar-brand">SIUX</a>
             </div>
 
             <!-- Collapsible menu -->
             <div class="collapse navbar-collapse" id="mainMenu">
 
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="">
+                    <li{% if slug == 'index' %} class="active"{% endif %}>
+                        <a href="{{ app.request.basepath }}">
                             {% include '_partials/icon.html.twig' with {'name': 'home', 'class': 'hidden-xs'} %}
                             <span class="visible-xs">Dashboard</span>
                         </a>
