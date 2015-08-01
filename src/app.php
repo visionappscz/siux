@@ -2,12 +2,10 @@
 
 $app = new Silex\Application;
 
-// Register providers
 $app->register(new Silex\Provider\SessionServiceProvider);
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider);
 $app->register(new Silex\Provider\TwigServiceProvider, ['twig.path' => __DIR__ . '/../views']);
 
-// Page rendering
 $app->get('/', function () use ($app) {
     return $app['twig']->render('index.html.twig');
 });
