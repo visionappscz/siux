@@ -13,7 +13,8 @@ module.exports = {
     },
     options: {
       proxy: '<%= devUrl %>',
-      watchTask: true
+      watchTask: true,
+      browser: '<%= devBrowser %>'
     }
   }
 

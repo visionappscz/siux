@@ -24,8 +24,9 @@ module.exports = function(grunt) {
       temp: '.tmp'
     },
 
-    // Development URL
-    devUrl: 'localhost/siux/web/'
+    // Development
+    devUrl: 'localhost/siux/web/',
+    devBrowser: 'google chrome'
 
   };
 
