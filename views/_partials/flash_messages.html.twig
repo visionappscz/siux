@@ -1,19 +1,20 @@
-{% for flashMessage in app.session.flashbag.get('success') %}
-    <div class="alert alert-success alert-dismissible alert-full fade in">
+{% if not flash == '0' %}
+    <div class="alert alert-{{ flashType }} alert-full alert-dismissible fade in">
         <button class="close" data-dismiss="alert">&times;</button>
-        <div class="container-fluid">
-            {% include '_partials/icon.html.twig' with {'name': 'ok-sign', 'class': 'icon-offset'} %}
-            {{ flashMessage|raw }}
-        </div>
-    </div>
-{% endfor %}
+        <div class="container">
+            {% if flashType == 'success' %}
+                {% include '_partials/icon.html.twig' with {'name': 'ok-sign', 'class': 'icon-offset'} %}
+            {% elseif flashType == 'danger' %}
+                {% include '_partials/icon.html.twig' with {'name': 'warning-sign', 'class': 'icon-offset'} %}
+            {% elseif flashType == 'info' %}
+                {% include '_partials/icon.html.twig' with {'class': 'icon-offset'} %}
+            {% elseif flashType == 'warning' %}
+                {% include '_partials/icon.html.twig' with {'name': 'warning-sign', 'class': 'icon-offset'} %}
+            {% endif %}
 
-{% for flashMessage in app.session.flashbag.get('error') %}
-    <div class="alert alert-error alert-dismissible alert-full fade in">
-        <button class="close" data-dismiss="alert">&times;</button>
-        <div class="container-fluid">
-            {% include '_partials/icon.html.twig' with {'name': 'warning-sign', 'class': 'icon-offset'} %}
-            {{ flashMessage|raw }}
+            {% if flash == '1' %}
+                You have been signed off. See you later!
+            {% endif %}
         </div>
     </div>
-{% endfor %}
+{% endif %}

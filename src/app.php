@@ -6,6 +6,11 @@ $app->register(new Silex\Provider\SessionServiceProvider);
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider);
 $app->register(new Silex\Provider\TwigServiceProvider, ['twig.path' => __DIR__ . '/../views']);
 
+$app['twig'] = $app->extend('twig', function (\Twig_Environment $twig, Silex\Application $app) {
+    $twig->addExtension(new Siux\Filters($app));
+    return $twig;
+});
+
 $app->get('/', function () use ($app) {
     return $app['twig']->render('index.html.twig');
 });

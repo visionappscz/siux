@@ -1,7 +1,7 @@
 <header role="banner" id="top">
 
     <!-- Main navigation -->
-    <nav class="navbar navbar-static-top navbar-default">
+    <nav class="navbar navbar-fixed-top navbar-default">
         <div class="container">
 
             <!-- Brand and menu toggle -->
@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="{{ app.request.basepath }}" class="navbar-brand">SIUX</a>
+                <a href="{{ 'index'|url(params) }}" class="navbar-brand">SIUX</a>
             </div>
 
             <!-- Collapsible menu -->
@@ -20,22 +20,22 @@
 
                 <ul class="nav navbar-nav">
                     <li{% if slug == 'index' %} class="active"{% endif %}>
-                        <a href="{{ app.request.basepath }}">
+                        <a href="{{ 'index'|url(params) }}">
                             {% include '_partials/icon.html.twig' with {'name': 'home', 'class': 'hidden-xs'} %}
                             <span class="visible-xs">Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">Orders</a>
+                        <a href="{{ 'orders'|url(params) }}">Orders</a>
                     </li>
                     <li>
-                        <a href="">Products</a>
+                        <a href="{{ 'products'|url(params) }}">Products</a>
                     </li>
                     <li>
-                        <a href="">Users</a>
+                        <a href="{{ 'users'|url(params) }}">Users</a>
                     </li>
                     <li>
-                        <a href="">Media</a>
+                        <a href="{{ 'media'|url(params) }}">Media</a>
                     </li>
                 </ul>
 
@@ -47,7 +47,7 @@
                         </a>
                     </li>
                     <li class="navbar-icon">
-                        <a href="" title="Nastavení">
+                        <a href="{{ 'settings'|url(params) }}" title="Nastavení">
                             {% include '_partials/icon.html.twig' with {'name': 'cog'} %}
                             <span class="visible-xs">Settings</span>
                         </a>
@@ -62,7 +62,7 @@
                             <li class="dropdown-header">James Brown</li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#">
+                                <a href="{{ 'index'|url(params|merge({'loggedIn': 0}), 1, 'success') }}">
                                     {% include '_partials/icon.html.twig' with {'name': 'off', 'class': 'icon-offset icon-vertically-aligned'} %}
                                     Sign out
                                 </a>
