@@ -4,7 +4,7 @@ module.exports = {
 
   dist: {
     options: {
-      paths: 'bower_components',
+      paths: '<%= paths.bower %>',
       banner: '<%= banner %>'
     },
     files: {
